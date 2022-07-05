@@ -734,17 +734,17 @@ stock bool:ConfigKeyvalueTreeSetting(ConfigFile:config, ConfigKvAction:action = 
             // Set new value.
             KvSetString(hConfig, setting, value);
         }
-        case KvAction_Delete:
+        case KvAction_KVDelete:
         {
             // Return deletion result.
             return KvDeleteKey(hConfig, setting);
         }
-        case KvAction_Set:
+        case KvAction_KVSet:
         {
             // Set new value.
             KvSetString(hConfig, setting, value);
         }
-        case KvAction_Get:
+        case KvAction_KVGet:
         {
             // Get current value.
             KvGetString(hConfig, setting, value, maxlen);

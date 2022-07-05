@@ -31,40 +31,6 @@
 #define ZR_VOLUMES_MAX 32
 
 /**
- * Represent a rectangular volume.
- */
-enum struct VolumeAttributes
-{
-    /* General */
-    bool Vol_Enabled;                   /** Volume state. */
-    bool Vol_InUse;                     /** Marks if the volume is used. */
-
-    /* Location */
-    float Vol_xMin;                     /** Minimum x position. */
-    float Vol_xMax;                     /** Maximum x position. */
-
-    float Vol_yMin;                     /** Minimum y position. */
-    float Vol_yMax;                     /** Maximum y position. */
-
-    float Vol_zMin;                     /** Minimum z position. */
-    float Vol_zMax;                     /** Maximum z position. */
-
-    /* Style */
-    VolumeEffects Vol_Effect;           /** Visual effect to apply on the volume. */
-    int Vol_EffectColor[3];                 /** Render color of the effect. RGB colors. */
-
-    /* Data */
-    VolumeFeatureTypes Vol_Type;        /** The volumetric feature type. */
-    int Vol_DataIndex;                      /** Index in remote feature array. */
-
-    /* Behaviour */
-    VolumeTeamFilters Vol_TeamFilter;   /** Team filtering. Trigger by certain teams, or all. */
-    float Vol_TriggerDelay;             /** Trigger delay. How many seconds players have to stay to trigger volume events. */
-    VolumeConflictActions Vol_ConflictAction;       /** What to do if volumes of same type overlap. */
-    int Vol_Priority;                       /** Volume priority. */
-}
-
-/**
  * Available volumetric feature types.
  */
 enum VolumeFeatureTypes
@@ -101,6 +67,40 @@ enum VolumeConflictActions
 {
     VolPriority = 0,    /** Use the volume with highest priority, ignore others. */
     VolMerge            /** Try to merge volume settings/attributes, or use priority if there's a merge conflict. */
+}
+
+/**
+ * Represent a rectangular volume.
+ */
+enum struct VolumeAttributes
+{
+    /* General */
+    bool Vol_Enabled;                   /** Volume state. */
+    bool Vol_InUse;                     /** Marks if the volume is used. */
+
+    /* Location */
+    float Vol_xMin;                     /** Minimum x position. */
+    float Vol_xMax;                     /** Maximum x position. */
+
+    float Vol_yMin;                     /** Minimum y position. */
+    float Vol_yMax;                     /** Maximum y position. */
+
+    float Vol_zMin;                     /** Minimum z position. */
+    float Vol_zMax;                     /** Maximum z position. */
+
+    /* Style */
+    VolumeEffects Vol_Effect;           /** Visual effect to apply on the volume. */
+    int Vol_EffectColor[3];                 /** Render color of the effect. RGB colors. */
+
+    /* Data */
+    VolumeFeatureTypes Vol_Type;        /** The volumetric feature type. */
+    int Vol_DataIndex;                      /** Index in remote feature array. */
+
+    /* Behaviour */
+    VolumeTeamFilters Vol_TeamFilter;   /** Team filtering. Trigger by certain teams, or all. */
+    float Vol_TriggerDelay;             /** Trigger delay. How many seconds players have to stay to trigger volume events. */
+    VolumeConflictActions Vol_ConflictAction;       /** What to do if volumes of same type overlap. */
+    int Vol_Priority;                       /** Volume priority. */
 }
 
 /**

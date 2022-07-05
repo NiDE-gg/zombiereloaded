@@ -265,9 +265,9 @@ stock bool:VolSetEffectColorString(volumeIndex, const String:effect_color[])
  */
 stock VolSetEffectColor(volumeIndex, red, green, blue)
 {
-    Volumes[volumeIndex][vol_effect_color][0] = red;
-    Volumes[volumeIndex][vol_effect_color][1] = green;
-    Volumes[volumeIndex][vol_effect_color][2] = blue;
+    Volumes[volumeIndex].Vol_EffectColor[0] = red;
+    Volumes[volumeIndex].Vol_EffectColor[1] = green;
+    Volumes[volumeIndex].Vol_EffectColor[2] = blue;
 }
 
 /**
@@ -323,7 +323,7 @@ stock bool:VolSetEnabledString(volumeIndex, const String:enabled[])
  * @param volumeIndex   The volume index to apply to.
  * @param enabled       Specifies if the volume should be enabled or not.
  */
-stock VolSetEnabled(volumeIndex, bool:enabled)
+stock void VolSetEnabled(volumeIndex, bool:enabled)
 {
     // Check if the new value is different from the current.
     if (Volumes[volumeIndex].Vol_Enabled != enabled)

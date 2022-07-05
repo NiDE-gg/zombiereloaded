@@ -785,7 +785,7 @@ stock WeaponsSlot:WeaponsGetActiveWeaponSlot(client)
     // If client has no active weapon, then stop.
     if (activeweapon == -1)
     {
-        return Type_Invalid;
+        return Slot_Invalid;
     }
 
     // x = weapon slot.
@@ -797,7 +797,7 @@ stock WeaponsSlot:WeaponsGetActiveWeaponSlot(client)
         }
     }
 
-    return Type_Invalid;
+    return Slot_Invalid;
 }
 
 /**
